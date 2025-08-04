@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Astrro Gym Outfit</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #27ae60;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        nav {
+            margin-top: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .cart-icon {
+            position: absolute;
+            top: 30px;
+            right: 80px;
+            width: 70px;
+            cursor: pointer;
+        }
+
+        .cart-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .remove-button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .checkout-button {
+            padding: 10px 20px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .checkout-button:hover {
+            background-color: #1e8449;
+        }
+
+        /* Address form styling */
+        .address-form {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .address-form input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Astrro Gym Outfit</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="T-Shirt.html">T-Shirt </a></li>
+                <li><a href="Shorts.html">Shorts</a></li>
+                <li><a href="Joggers.html">Joggers</a></li>
+                <li><a href="Protein.html">Protein</a></li>
+                <li><a href="Pre-Workout.html">Pre-Workout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Cart Icon -->
+        <a href="cart.html">
+            <img src="cart-icon.png" alt="Cart" class="cart-icon">
+        </a>
+    </header>
+
+    <div class="cart-container">
+        <h2>Your Cart</h2>
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Cart items will be added here -->
+            </tbody>
+        </table>
+
+        <h3>Total Amount: ₹<span id="total-amount">0</span></h3>
+
+        <!-- Address Form -->
+        <div class="address-form">
+            <h3>Shipping Address</h3>
+            <input type="text" id="full-name" placeholder="Full Name" required>
+            <input type="text" id="address" placeholder="Address" required>
+            <input type="text" id="pin-code" placeholder="Pin Code" required>
+            <input type="text" id="phone-no" placeholder="Phone Number" required>
+        </div>
+
+        <button class="checkout-button" onclick="proceedToCheckout()">Proceed to Checkout</button>
+    </div>
+
+    <script>
+        // Function to render cart items
+        function renderCartItems() {
+            const cartTable = document.getElementById('cart-items');
+            const totalAmount = document.getElementById('total-amount');
+            cartTable.innerHTML = '';
+            let total = 0;
+
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            cartItems.forEach((item, index) => {
+                const row = document.createElement('tr');
+                const totalItemPrice = item.price * item.quantity;
+                total += totalItemPrice;
+
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>${item.quantity}</td>
+                    <td>₹${item.price}</td>
+                    <td>₹${totalItemPrice}</td>
+                    <td><button class="remove-button" onclick="removeItem(${index})">Remove</button></td>
+                `;
+
+                cartTable.appendChild(row);
+            });
+
+            totalAmount.innerText = total;
+        }
+
+        // Function to remove an item from the cart
+        function removeItem(index) {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            cartItems.splice(index, 1);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            renderCartItems();
+        }
+
+        // Function to proceed to checkout
+        function proceedToCheckout() {
+            const total = document.getElementById('total-amount').innerText;
+            const fullName = document.getElementById('full-name').value;
+            const address = document.getElementById('address').value;
+            const pinCode = document.getElementById('pin-code').value;
+            const phoneNo = document.getElementById('phone-no').value;
+
+            if (!fullName || !address || !pinCode || !phoneNo) {
+                alert('Please fill in all fields!');
+                return;
+            }
+
+            // Get cart items
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            let cartMessage = 'Cart Items:\n';
+            cartItems.forEach(item => {
+                cartMessage += `${item.name} - ₹${item.price} x ${item.quantity} = ₹${item.price * item.quantity}\n`;
+            });
+
+            const message = `Proceeding to checkout with total amount ₹${total}\n` +
+                            `Name: ${fullName}\n` +
+                            `Address: ${address}\n` +
+                            `Pin Code: ${pinCode}\n` +
+                            `Phone No: ${phoneNo}\n\n` +
+                            cartMessage;
+
+            window.location.href = `https://api.whatsapp.com/send?phone=9604872991&text=${encodeURIComponent(message)}`;
+        }
+
+        // Initial rendering of cart items
+        renderCartItems();
+    </script>
+
+</body>
+</html>

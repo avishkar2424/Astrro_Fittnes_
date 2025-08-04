@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seedlings - Agricultura</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header and navigation styles */
+        header {
+            background-color: #27ae60;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .cart-icon {
+            position: absolute;
+            top: 30px;
+            right: 80px;
+            width: 70px;
+            cursor: pointer;
+        }
+
+        /* Main content styles */
+        main {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .seedling {
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Increased image size */
+        .seedling img {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            margin-right: 20px;
+        }
+
+        .seedling-details {
+            flex: 1;
+        }
+
+        .seedling h3 {
+            margin: 0 0 10px;
+        }
+
+        .seedling p {
+            margin: 5px 0;
+        }
+
+        .quantity {
+            margin-top: 10px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #27ae60;
+        }
+
+        .add-to-cart {
+            padding: 10px 20px;
+            background-color: #27ae60;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .add-to-cart:hover {
+            background-color: #1e8449;
+        }
+
+        .seedling-bottom {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .seedling {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .seedling img {
+                margin-bottom: 10px;
+            }
+
+            .seedling-bottom {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Same as Home Page -->
+    <header>
+        <div class="logo">
+            <h1>Agricultura</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="T-Shirt.html">T-Shirt</a></li>
+                <li><a href="seedling.html">Seedling</a></li>
+                <li><a href="fertilizers.html">Fertilizers</a></li>
+                <li><a href="Protein.html">Protein</a></li>
+                <li><a href="Pre-Workout.html">Pre-Workout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Cart Icon -->
+        <a href="cart.html">
+            <img src="cart-icon.png" alt="Cart" class="cart-icon">
+        </a>
+    </header>
+
+    <main>
+        <h2>Seedlings</h2>
+
+        <!-- Seedling 1 -->
+        <div class="seedling">
+            <img src="seedling1.jpg" alt="Tomato Seedling">
+            <div class="seedling-details">
+                <h3>Tomato Seedling</h3>
+                <p><strong>Description:</strong> Perfect for growing in nutrient-rich soil, tomato seedlings thrive in sunny conditions.</p>
+                <p><strong>Soil Type:</strong> Well-drained loamy soil</p>
+                <p><strong>Weight:</strong> 100g</p>
+                <p class="price">Price: ₹50</p>
+                <label class="quantity">Quantity: 
+                    <input type="number" id="tomato-quantity" value="1" min="1" style="width: 50px;">
+                </label>
+            </div>
+            <div class="seedling-bottom">
+                <button class="add-to-cart" onclick="addToCart('Tomato Seedling', 50, document.getElementById('tomato-quantity').value)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Seedling 2 (Replaced Lettuce with Spinach) -->
+        <div class="seedling">
+            <img src="seedling2.jpg" alt="Spinach Seedling">
+            <div class="seedling-details">
+                <h3>Spinach Seedling</h3>
+                <p><strong>Description:</strong> Spinach seedlings are best for cool, moist environments. High in nutrients and perfect for salads.</p>
+                <p><strong>Soil Type:</strong> Moist, well-drained soil</p>
+                <p><strong>Weight:</strong> 50g</p>
+                <p class="price">Price: ₹30</p>
+                <label class="quantity">Quantity: 
+                    <input type="number" id="spinach-quantity" value="1" min="1" style="width: 50px;">
+                </label>
+            </div>
+            <div class="seedling-bottom">
+                <button class="add-to-cart" onclick="addToCart('Spinach Seedling', 30, document.getElementById('spinach-quantity').value)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Seedling 3 -->
+        <div class="seedling">
+            <img src="seedling3.jpg" alt="Cucumber Seedling">
+            <div class="seedling-details">
+                <h3>Cucumber Seedling</h3>
+                <p><strong>Description:</strong> Grows well in warm climates and is ideal for salads and pickling.</p>
+                <p><strong>Soil Type:</strong> Fertile, well-drained soil</p>
+                <p><strong>Weight:</strong> 80g</p>
+                <p class="price">Price: ₹40</p>
+                <label class="quantity">Quantity: 
+                    <input type="number" id="cucumber-quantity" value="1" min="1" style="width: 50px;">
+                </label>
+            </div>
+            <div class="seedling-bottom">
+                <button class="add-to-cart" onclick="addToCart('Cucumber Seedling', 40, document.getElementById('cucumber-quantity').value)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Seedling 4 -->
+        <div class="seedling">
+            <img src="seedling4.jpg" alt="Pepper Seedling">
+            <div class="seedling-details">
+                <h3>Pepper Seedling</h3>
+                <p><strong>Description:</strong> Pepper seedlings require full sun and grow well in slightly acidic soil.</p>
+                <p><strong>Soil Type:</strong> Loamy, slightly acidic soil</p>
+                <p><strong>Weight:</strong> 75g</p>
+                <p class="price">Price: ₹60</p>
+                <label class="quantity">Quantity: 
+                    <input type="number" id="pepper-quantity" value="1" min="1" style="width: 50px;">
+                </label>
+            </div>
+            <div class="seedling-bottom">
+                <button class="add-to-cart" onclick="addToCart('Pepper Seedling', 60, document.getElementById('pepper-quantity').value)">Add to Cart</button>
+            </div>
+        </div>
+	 <!-- Seedling 5 -->
+        <div class="seedling">
+            <img src="seedling5.jpg" alt="Eggplant Seedling">
+            <div class="seedling-details">
+                <h3>Eggplant Seedling</h3>
+                <p><strong>Description:</strong> Eggplant seedlings prefer well-drained soil and warm growing conditions.</p>
+                <p><strong>Soil Type:</strong> Rich, well-drained soil</p>
+                <p><strong>Weight:</strong> 90g</p>
+		<p class="price">Price: ₹50</p>
+                <label class="quantity">Quantity: 
+                    <input type="number" id="eggplant-quantity" value="1" min="1" style="width: 50px;">
+                </label>
+            </div>
+            <div class="seedling-bottom">
+                <button class="add-to-cart" onclick="addToCart('Eggplant Seedling', 50, document.getElementById('eggplant-quantity').value)">Add to Cart</button>
+            </div>
+        <script>
+    // Function to add items to the cart
+    function addToCart(productName, productPrice, quantity) {
+        // Parse existing cart items or initialize an empty array
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+        // Check if the product is already in the cart
+        let existingItem = cartItems.find(item => item.name === productName);
+        if (existingItem) {
+            existingItem.quantity += Number(quantity); // Increment quantity if product is already in cart
+        } else {
+            cartItems.push({ name: productName, price: productPrice, quantity: Number(quantity) });
+        }
+
+        // Update the cart in local storage
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        alert(`${quantity} x ${productName} added to cart! Redirecting to checkout...`);
+        window.location.href = 'cart.html'; // Redirect to cart page
+    }
+</script>
+
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizers - Agricultura</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header and navigation styles */
+        header {
+            background-color: #27ae60;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .cart-icon {
+            position: absolute;
+            top: 30px;
+            right: 80px;
+            width: 70px;
+            cursor: pointer;
+        }
+
+        /* Main content styles */
+        main {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .fertilizer {
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .fertilizer img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin-right: 20px;
+        }
+
+        .fertilizer-details {
+            flex: 1;
+        }
+
+        .fertilizer h3 {
+            margin: 0 0 10px;
+        }
+
+        .fertilizer p {
+            margin: 5px 0;
+        }
+
+        .quantity {
+            margin-top: 10px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #27ae60;
+        }
+
+        .add-to-cart {
+            padding: 10px 20px;
+            background-color: #27ae60;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .add-to-cart:hover {
+            background-color: #1e8449;
+        }
+
+        .fertilizer-bottom {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .fertilizer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .fertilizer img {
+                margin-bottom: 10px;
+            }
+
+            .fertilizer-bottom {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Same as Home Page -->
+    <header>
+        <div class="logo">
+            <h1>Agricultura</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="T-Shirt.html">T-Shirt</a></li>
+                <li><a href="Shorts.html">Shorts</a></li>
+                <li><a href="Joggers.html">Joggers</a></li>
+                <li><a href="Protein.html">Protein</a></li>
+                <li><a href="Pre-Workout.html">Pre-Workout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Cart Icon -->
+        <a href="cart.html">
+            <img src="cart-icon.png" alt="Cart" class="cart-icon">
+        </a>
+    </header>
+
+    <main>
+        <h2>Protein</h2>
+
+        <!-- Fertilizer 1 -->
+        <div class="Fertilizer">
+            <img src="" alt="Whey Protein">
+            <div class="Protein-details">
+                <h3>Whey Protein</h3>
+                <p><strong>Description:</strong> Best for vegetable gardens and fruit plants, boosts soil health naturally.</p>
+                <p><strong>Uses:</strong> Vegetables, fruits,etc</p>
+                <p><strong>Composition:</strong> Organic matter, Nitrogen, Phosphorus</p>
+                <p class="price">Price: ₹1999 (1 kg)</p>
+                <label class="quantity">Quantity (kg): 
+                    <input type="number" id="Whey Protein-quantity" value="1" min="1" style="width: 50px;">
+                </label>
+            </div>
+            <div class="fertilizer-bottom">
+                <button class="add-to-cart" onclick="addToCart('Whey Protein', 200, document.getElementById('Whey Protein-quantity').value)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Fertilizer 2 -->
+        <div class="fertilizer">
+            <img src="whey protein.jpg" alt="Mass Gainer">
+            <div class="Mass Gainer-details">
+                <h3> Mass Gainer</h3>
+                <p><strong>Description:</strong> Provides balanced nutrition with nitrogen, phosphorus, and potassium.</p>
+                <p><strong>Uses:</strong> Wheat, rice, and corn crops</p>
+                <p><strong>Composition:</strong> Nitrogen, Phosphorus, Potassium</p>
+                <p class="price">Price: ₹2499 (1 kg)</p>
+                <label class="quantity">Quantity (kg): 
+                    <input type="number" id="Mass Gainer-quantity" value="1" min="1" style="width: 50px;">
+                </label>
+            </div>
+            <div class="fertilizer-bottom">
+                <button class="add-to-cart" onclick="addToCart('Mass Gainer', 180, document.getElementById('Mass Gainer-quantity').value)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Fertilizer 3 -->
+        <div class="fertilizer">
+            <img src="fertilizer3.jpg" alt="Avvatar Mass Gainer">
+            <div class="fertilizer-details">
+                <h3>Avvatar Mass Gainer</h3>
+                <p><strong>Description:</strong> Environment-friendly compost ideal for soil enrichment and moisture retention.</p>
+                <p><strong>Uses:</strong> Organic farming, gardening</p>
+                <p><strong>Composition:</strong> Decomposed organic matter</p>
+                <p class="price">Price: ₹1799 (1 kg)</p>
+                <label class="quantity">Quantity (kg): 
+                    <input type="number" id="compost-quantity" value="1" min="1" style="width: 50px;">
+                </label>
+            </div>
+            <div class="fertilizer-bottom">
+                <button class="add-to-cart" onclick="addToCart('Avvatar Mass Gainerr', 150, document.getElementById('compost-quantity').value)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Fertilizer 4 -->
+        <div class="fertilizer">
+            <img src="fertilizer4.jpg" alt="GNC Pro Weight Gainer">
+            <div class="fertilizer-details">
+                <h3>GNC Pro Weight Gainer</h3>
+                <p><strong>Description:</strong> High nitrogen content fertilizer for boosting plant growth.</p>
+                <p><strong>Uses:</strong> Wheat, rice, sugarcane</p>
+                <p><strong>Composition:</strong> Nitrogen 46%</p>
+                <p class="price">Price: ₹120 (1 kg)</p>
+                <label class="quantity">Quantity (kg): 
+                    <input type="number" id="GNC Pro Weight Gainer-quantity" value="1" min="1" style="width: 50px;">
+                </label>
+            </div>
+            <div class="fertilizer-bottom">
+                <button class="add-to-cart" onclick="addToCart('Urea Fertilizer', 120, document.getElementById('urea-quantity').value)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Fertilizer 5 -->
+        <div class="fertilizer">
+            <img src="fertilizer5.jpg" alt="Potash Fertilizer">
+            <div class="fertilizer-details">
+                <h3>Potash Fertilizer</h3>
+                <p><strong>Description:</strong> Essential for plant growth, helps improve root strength and overall health.</p>
+                <p><strong>Uses:</strong> Fruits, vegetables, and ornamental plants</p>
+                <p><strong>Composition:</strong> Potassium Chloride</p>
+                <p class="price">Price: ₹140 (1 kg)</p>
+                <label class="quantity">Quantity (kg): 
+                    <input type="number" id="potash-quantity" value="1" min="1" style="width: 50px;">
+                </label>
+            </div>
+            <div class="fertilizer-bottom">
+                <button class="add-to-cart" onclick="addToCart('Potash Fertilizer', 140, document.getElementById('potash-quantity').value)">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+    // Function to add items to the cart
+    function addToCart(productName, productPrice, quantity) {
+        // Parse existing cart items or initialize an empty array
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+        // Check if the product is already in the cart
+        let existingItem = cartItems.find(item => item.name === productName);
+        if (existingItem) {
+            existingItem.quantity += Number(quantity); // Increment quantity if product is already in cart
+        } else {
+            cartItems.push({ name: productName, price: productPrice, quantity: Number(quantity) });
+        }
+
+        // Update the cart in local storage
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        alert(`${quantity} x ${productName} added to cart! Redirecting to checkout...`);
+        window.location.href = 'cart.html'; // Redirect to cart page
+    }
+</script>
+
+
+
+</body>
+</html>

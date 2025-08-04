@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesticides - Agricultura</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header and navigation styles */
+        header {
+            background-color: #27ae60;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .cart-icon {
+            position: absolute;
+            top: 30px;
+            right: 80px;
+            width: 70px;
+            cursor: pointer;
+        }
+
+        /* Main content styles */
+        main {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .pesticide {
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .pesticide img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin-right: 20px;
+        }
+
+        .pesticide-details {
+            flex: 1;
+        }
+
+        .pesticide h3 {
+            margin: 0 0 10px;
+        }
+
+        .pesticide p {
+            margin: 5px 0;
+        }
+
+        .quantity {
+            margin-top: 10px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #27ae60;
+        }
+
+        .add-to-cart {
+            padding: 10px 20px;
+            background-color: #27ae60;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .add-to-cart:hover {
+            background-color: #1e8449;
+        }
+
+        .pesticide-bottom {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .pesticide {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .pesticide img {
+                margin-bottom: 10px;
+            }
+
+            .pesticide-bottom {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Same as Home Page -->
+    <header>
+        <div class="logo">
+            <h1>Agricultura</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="T-Shirt.html">T-Shirt</a></li>
+                <li><a href="Shorts.html">Shorts</a></li>
+                <li><a href="Joggers.html">Joggers</a></li>
+                <li><a href="Protein.html">Protein</a></li>
+                <li><a href="Pre-Workout.html">Pre-Workout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Cart Icon -->
+        <a href="cart.html">
+            <img src="cart-icon.png" alt="Cart" class="cart-icon">
+        </a>
+    </header>
+
+    <main>
+        <h2>Pesticides</h2>
+
+        <!-- Pesticide 1 -->
+        <div class="pesticide">
+            <img src="pesticide1.jpg" alt="Insecticide">
+            <div class="pesticide-details">
+                <h3>Insecticide</h3>
+                <p><strong>Description:</strong> Effective against a variety of pests, ensuring healthy crops.</p>
+                <p><strong>Uses:</strong> Vegetables and fruit trees</p>
+                <p><strong>Composition:</strong> 40% active ingredient</p>
+                <p class="price">Price: ₹300 (1 L)</p>
+                <label class="quantity">Quantity (L): 
+                    <input type="number" id="insecticide-quantity" value="1" min="1" style="width: 50px;">
+                </label>
+            </div>
+            <div class="pesticide-bottom">
+                <button class="add-to-cart" onclick="addToCart('Insecticide', 300, document.getElementById('insecticide-quantity').value)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Pesticide 2 -->
+        <div class="pesticide">
+            <img src="pesticide2.jpg" alt="Herbicide">
+            <div class="pesticide-details">
+                <h3>Herbicide</h3>
+                <p><strong>Description:</strong> Controls unwanted weeds and promotes healthy plant growth.</p>
+                <p><strong>Uses:</strong> Crops and gardens</p>
+                <p><strong>Composition:</strong> 30% active ingredient</p>
+                <p class="price">Price: ₹250 (1 L)</p>
+                <label class="quantity">Quantity (L): 
+                    <input type="number" id="herbicide-quantity" value="1" min="1" style="width: 50px;">
+                </label>
+            </div>
+            <div class="pesticide-bottom">
+                <button class="add-to-cart" onclick="addToCart('Herbicide', 250, document.getElementById('herbicide-quantity').value)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Pesticide 3 -->
+        <div class="pesticide">
+            <img src="pesticide3.jpg" alt="Fungicide">
+            <div class="pesticide-details">
+                <h3>Fungicide</h3>
+                <p><strong>Description:</strong> Prevents and controls fungal diseases in plants.</p>
+                <p><strong>Uses:</strong> All types of crops</p>
+                <p><strong>Composition:</strong> 50% active ingredient</p>
+                <p class="price">Price: ₹320 (1 L)</p>
+                <label class="quantity">Quantity (L): 
+                    <input type="number" id="fungicide-quantity" value="1" min="1" style="width: 50px;">
+                </label>
+            </div>
+            <div class="pesticide-bottom">
+                <button class="add-to-cart" onclick="addToCart('Fungicide', 320, document.getElementById('fungicide-quantity').value)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Pesticide 4 -->
+        <div class="pesticide">
+            <img src="pesticide4.jpg" alt="Nematicide">
+            <div class="pesticide-details">
+                <h3>Nematicide</h3>
+                <p><strong>Description:</strong> Targets nematodes, promoting healthier root systems.</p>
+                <p><strong>Uses:</strong> Vegetables and flowers</p>
+                <p><strong>Composition:</strong> 20% active ingredient</p>
+                <p class="price">Price: ₹360 (1 L)</p>
+                <label class="quantity">Quantity (L): 
+                    <input type="number" id="nematicide-quantity" value="1" min="1" style="width: 50px;">
+                </label>
+            </div>
+            <div class="pesticide-bottom">
+                <button class="add-to-cart" onclick="addToCart('Nematicide', 360, document.getElementById('nematicide-quantity').value)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Pesticide 5 -->
+        <div class="pesticide">
+            <img src="pesticide5.jpg" alt="Rodenticide">
+            <div class="pesticide-details">
+                <h3>Rodenticide</h3>
+                <p><strong>Description:</strong> Effectively eliminates rodent infestations.</p>
+                <p><strong>Uses:</strong> Storage areas and fields</p>
+                <p><strong>Composition:</strong> 25% active ingredient</p>
+                <p class="price">Price: ₹280 (1 L)</p>
+                <label class="quantity">Quantity (L): 
+                    <input type="number" id="rodenticide-quantity" value="1" min="1" style="width: 50px;">
+                </label>
+            </div>
+            <div class="pesticide-bottom">
+                <button class="add-to-cart" onclick="addToCart('Rodenticide', 280, document.getElementById('rodenticide-quantity').value)">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+    // Function to add items to the cart
+    function addToCart(productName, productPrice, quantity) {
+        // Parse existing cart items or initialize an empty array
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+        // Check if the product is already in the cart
+        let existingItem = cartItems.find(item => item.name === productName);
+        if (existingItem) {
+            existingItem.quantity += Number(quantity); // Increment quantity if product is already in cart
+        } else {
+            cartItems.push({ name: productName, price: productPrice, quantity: Number(quantity) });
+        }
+
+        // Update the cart in local storage
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        alert(`${quantity} x ${productName} added to cart! Redirecting to checkout...`);
+        window.location.href = 'cart.html'; // Redirect to cart page
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Workout - Astrro Gym Outfit</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header and navigation styles */
+        header {
+            background-color: #27ae60;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .cart-icon {
+            position: absolute;
+            top: 30px;
+            right: 80px;
+            width: 70px;
+            cursor: pointer;
+        }
+
+        /* Main content styles */
+        main {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .product img {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            margin-right: 20px;
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .product h3 {
+            margin: 0 0 10px;
+        }
+
+        .product p {
+            margin: 5px 0;
+        }
+
+        .quantity {
+            margin-top: 10px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #27ae60;
+        }
+
+        .add-to-cart {
+            padding: 10px 20px;
+            background-color: #27ae60;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .add-to-cart:hover {
+            background-color: #1e8449;
+        }
+
+        .product-bottom {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .product {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .product img {
+                margin-bottom: 10px;
+            }
+
+            .product-bottom {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Same as Home Page -->
+    <header>
+        <div class="logo">
+            <h1>Astrro Gym Outfit</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="T-Shirt.html">T-Shirt</a></li>
+                <li><a href="Shorts.html">Shorts</a></li>
+                <li><a href="Joggers.html">Joggers</a></li>
+                <li><a href="Protein.html">Protein</a></li>
+                <li><a href="Pre-Workout.html">Pre-Workout</a></li>
+                
+            </ul>
+        </nav>
+
+        <!-- Cart Icon -->
+        <a href="cart.html">
+            <img src="cart-icon.png" alt="Cart" class="cart-icon">
+        </a>
+    </header>
+
+    <main>
+        <h2>Pre-Workout</h2>
+
+        <!-- Product 1 -->
+        <div class="product">
+            <img src="GNC Pre-Workout.jpg" alt="GNC Pre-Workout">
+            <div class="product-details">
+                <h3>GNC Pre-Workout</h3>
+                <p><strong>Description:</strong> Ideal for digging small holes and transplanting.</p>
+                <p class="price">Price: 599</p>
+                <label class="quantity">Quantity: 
+                    <input type="number" id="GNC Pre-Workout-quantity" value="1" min="1" style="width: 50px;">
+                </label>
+            </div>
+            <div class="product-bottom">
+                <button class="add-to-cart" onclick="addToCart('GNC Pre-Workout', 250, document.getElementById('GNC Pre-Workout-quantity').value)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product">
+            <img src="Bigmuscles Pre-Workout.jpg" alt="Bigmuscles Pre-Workout">
+            <div class="product-details">
+                <h3>Bigmuscles Pre-Workout</h3>
+                <p><strong>Description:</strong> Perfect for trimming and shaping plants.</p>
+                <p class="price">Price: ₹499</p>
+                <label class="quantity">Quantity: 
+                    <input type="number" id="Bigmuscles Pre-Workout-quantity" value="1" min="1" style="width: 50px;">
+                </label>
+            </div>
+            <div class="product-bottom">
+                <button class="add-to-cart" onclick="addToCart('Bigmuscles Pre-Workout', 450, document.getElementById('Bigmuscles Pre-Workout-quantity').value)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product">
+            <img src="MuscleBlaze Pre-workout.jpg" alt="MuscleBlaze Pre-workout">
+            <div class="product-details">
+                <h3>MuscleBlaze Pre-workout</h3>
+                <p><strong>Description:</strong> Ideal for leveling soil and removing debris.</p>
+                <p class="price">Price: ₹599</p>
+                <label class="quantity">Quantity: 
+                    <input type="number" id="MuscleBlaze Pre-workout-quantity" value="1" min="1" style="width: 50px;">
+                </label>
+            </div>
+            <div class="product-bottom">
+                <button class="add-to-cart" onclick="addToCart('MuscleBlaze Pre-workout', 300, document.getElementById('MuscleBlaze Pre-workout-quantity').value)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product">
+            <img src="creatine wellcore.jpg" alt="Creatine Wellcore">
+            <div class="product-details">
+                <h3>Creatine Wellcore</h3>
+                <p><strong>Description:</strong> Efficient tool for transplanting seedlings.</p>
+                <p class="price">Price: ₹499</p>
+                <label class="quantity">Quantity: 
+                    <input type="number" id="Creatine Wellcore-quantity" value="1" min="1" style="width: 50px;">
+                </label>
+            </div>
+            <div class="product-bottom">
+                <button class="add-to-cart" onclick="addToCart('Creatine Wellcore', 200, document.getElementById('Creatine Wellcore-quantity').value)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product">
+            <img src="equipment5.jpg" alt="Garden Gloves">
+            <div class="product-details">
+                <h3>Garden Gloves</h3>
+                <p><strong>Description:</strong> Durable gloves for protecting your hands while gardening.</p>
+                <p class="price">Price: ₹150</p>
+                <label class="quantity">Quantity: 
+                    <input type="number" id="gloves-quantity" value="1" min="1" style="width: 50px;">
+                </label>
+            </div>
+            <div class="product-bottom">
+                <button class="add-to-cart" onclick="addToCart('Garden Gloves', 150, document.getElementById('gloves-quantity').value)">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+
+  
+       <script>
+    // Function to add items to the cart
+    function addToCart(productName, productPrice, quantity) {
+        // Parse existing cart items or initialize an empty array
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+        // Check if the product is already in the cart
+        let existingItem = cartItems.find(item => item.name === productName);
+        if (existingItem) {
+            existingItem.quantity += Number(quantity); // Increment quantity if product is already in cart
+        } else {
+            cartItems.push({ name: productName, price: productPrice, quantity: Number(quantity) });
+        }
+
+        // Update the cart in local storage
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        alert(`${quantity} x ${productName} added to cart! Redirecting to checkout...`);
+        window.location.href = 'cart.html'; // Redirect to cart page
+    }
+</script>
+
+
+  
+</body>
+</html>
